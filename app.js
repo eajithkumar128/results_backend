@@ -22,7 +22,7 @@ app.get("/teams", async (req, res) => {
         let response = await matchScore.find({}).exec()
         res.send(response)
     } catch (e) {
-        res.status = 500
+        res.status(500)
         res.send({ message: "Error in getting the result" })
     }
 
@@ -52,7 +52,7 @@ app.post("/matchResult", async (req, res) => {
         let result = await matchScore.find({}).exec()
         res.send(result)
     } catch (e) {
-        res.status = 500;
+        res.status(500);
         res.send({ message: "Error in updating the result" })
     }
 
@@ -70,7 +70,7 @@ app.post("/addNewTeam", async (req, res) => {
         let result = await matchScore.find({}).exec()
         res.send(result)
     } catch (e) {
-        res.status = 500;
+        res.status(500);
         res.send({ message: "Team with same name alrady exist" })
     }
 
